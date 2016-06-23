@@ -9,7 +9,7 @@ def index(request):
 
 def detail(request, album_id):
 	try:
-		album = Album.objects.filter(id=album_id)
+		album = Album.objects.get(id=album_id)
 	except Album.DoesNotExist:
 		raise Http404("No existe ese album")
 
